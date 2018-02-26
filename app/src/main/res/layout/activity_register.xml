@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.SemiColon.Hmt.elengaz.Activities.Register">
+    <RelativeLayout
+        android:id="@+id/profile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_cover_image"
+        android:background="@drawable/back"
+        android:elevation="4dp"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+
+            android:src="@mipmap/create" />
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+
+            android:src="@mipmap/menu" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="انشاء حساب "
+            android:textColor="#fff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/location"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="#fff"
+            android:src="@drawable/user"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:orientation="vertical">
+    <EditText
+        android:id="@+id/edtusername"
+        android:layout_marginTop="17dp"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="اسم المستخدم "
+        android:inputType="text"
+        android:padding="10dp"
+        android:drawableRight="@drawable/user"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="17dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/edtpass"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="كلمة المرور"
+android:inputType="textPassword"
+        android:layout_gravity="right"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:drawableRight="@drawable/lock"
+
+        android:textSize="17dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+
+    </TextView>
+    <EditText
+        android:id="@+id/edtemail"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint="البريد الالكترونى "
+        android:inputType="textEmailAddress"
+
+        android:padding="10dp"
+        android:drawableRight="@drawable/mail"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:textSize="17dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"></TextView>
+    <EditText
+        android:id="@+id/edtphone"
+        android:singleLine="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:hint=" رقم الجوال"
+        android:inputType="phone"
+        android:padding="10dp"
+        android:textColor="#000"
+        android:textColorHint="#000"
+        android:drawableRight="@drawable/user"
+
+        android:textSize="17dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary">
+
+
+
+    </TextView>
+    <Button
+        android:id="@+id/register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:textColor="#fbfdfb"
+        android:textSize="25dp"
+        android:background="@drawable/btn2"
+        android:text=" دخول"/>
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

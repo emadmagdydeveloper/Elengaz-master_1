@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.SemiColon.Hmt.elengaz.Activities.AddService">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="اضافة خدمه"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="18dp"
+            android:gravity="start"
+            android:src="@drawable/back_arrow" />
+
+
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:layout_gravity="right"
+                android:layout_margin="7dp"
+                android:textSize="20dp"
+                android:text="   اضف خدمه التى تريدها  "/>
+            <EditText
+                android:id="@+id/edt_service_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_margin="7dp"
+                android:textColor="#cc4d4747"
+                android:textColorHint="#cc4d4747"
+                android:paddingRight="10dp"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/backsearch"
+                android:hint="   اضف الخدمه هنا"/>
+            <EditText
+                android:id="@+id/edt-service_detail"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:textColorHint="#cc4d4747"
+                android:textColor="#cc4d4747"
+                android:paddingRight="10dp"
+                android:gravity="start"
+                android:layout_margin="5dp"
+                android:background="@drawable/backsearch"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:hint="   اضف التفاصيل هنا "/>
+            <EditText
+                android:id="@+id/edt_service_phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorHint="#cc4d4747"
+                android:textColor="#cc4d4747"
+                android:inputType="phone"
+                android:layout_margin="7dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/backsearch"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                android:hint="   اضافة رقم التلفون للتواصل  "/>
+            <EditText
+                android:id="@+id/edt_service_other_phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorHint="#cc4d4747"
+                android:textColor="#cc4d4747"
+                android:layout_margin="7dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/backsearch"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                android:inputType="phone"
+                android:hint="   اضف رقم التلفون اخر  "/>
+            <EditText
+                android:id="@+id/edt_service_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorHint="#cc4d4747"
+                android:textColor="#cc4d4747"
+                android:layout_margin="7dp"
+                android:paddingRight="10dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/backsearch"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                android:hint="   اضافة البريد الالكترونى  "/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="التاريخ"
+                    android:layout_margin="10dp"
+                    android:textSize="25dp"
+                    android:id="@+id/btndate"
+
+                    android:background="@drawable/btn2"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="العنوان"
+                    android:id="@+id/btnplace"
+                    android:layout_margin="10dp"
+                    android:textSize="25dp"
+                    android:background="@drawable/btn2"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btn_add_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="اضافة خدمة"
+                android:layout_margin="10dp"
+                android:textSize="25dp"
+                android:background="@drawable/btn2"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

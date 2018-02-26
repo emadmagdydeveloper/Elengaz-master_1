@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    >
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:layout_margin="15dp"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:text=" حالة الطلب "/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:background="@drawable/backsearch"
+                    android:layout_margin="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:text="الطلب : "/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/txtorder"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:gravity="center_vertical"
+                        android:textSize="15dp"
+                        android:text=" عمل تجديد اقامه "/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/backsearch"
+                    android:layout_margin="6dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:text="تاريخ الطلب : "/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/txtdate"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:gravity="right
+"
+                        android:textSize="15dp"
+                        android:text=" 1/1/2018 "/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/backsearch"
+                    android:layout_margin="6dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:text="حالة الطلب : "/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/txtstate"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:gravity="center_vertical"
+                        android:textSize="15dp"
+                        android:text=" تم التنفيذ "/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/backsearch"
+                    android:layout_margin="6dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:text="اسم مقدم الخدمه : "/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/txtservisename"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:gravity="center_vertical"
+                        android:textSize="15dp"
+                        android:text=" مكتب الرياض "/>
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:background="@drawable/backsearch"
+                    android:layout_margin="6dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical"
+                        android:layout_margin="3dp"
+                        android:textSize="15dp"
+                        android:text=" تقييم الطلب  : "/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:id="@+id/txtrate"
+                        android:layout_height="wrap_content"
+                        android:textColor="#e12b2929"
+                        android:layout_gravity="right"
+                        android:layout_margin="3dp"
+                        android:gravity="center_vertical"
+                        android:textSize="15dp"
+                        android:text=" تم التقييم"/>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

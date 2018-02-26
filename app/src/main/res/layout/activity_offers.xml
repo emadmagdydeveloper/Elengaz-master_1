@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+  >
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:textSize="25dp"
+            android:text="    العروض المقدمه "/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <RadioGroup
+            android:id="@+id/radiooffers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+
+
+            <RadioButton
+                android:id="@+id/radio_alwkeel"
+                android:layout_width="match_parent"
+                android:background="@drawable/btn3"
+                android:layout_margin="10dp"
+                android:layout_height="40dp"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:gravity="center"
+                android:text="@string/radio_alwkeel"
+                />
+            <RadioButton
+                android:id="@+id/radio_abofahd"
+                android:layout_width="match_parent"
+                android:background="@drawable/btn3"
+                android:layout_margin="10dp"
+                android:layout_height="40dp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:text="@string/radio_abofahd"
+                />
+            <RadioButton
+                android:id="@+id/radio_bnamar"
+                android:layout_width="match_parent"
+                android:background="@drawable/btn3"
+                android:layout_margin="10dp"
+                android:layout_height="40dp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:text="@string/radio_bnamar"
+                />
+            <RadioButton
+                android:id="@+id/radio_bngasm"
+                android:layout_width="match_parent"
+                android:background="@drawable/btn3"
+                android:layout_margin="10dp"
+                android:layout_height="40dp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:text="@string/radio_bngasm"
+                />
+            <RadioButton
+                android:id="@+id/radio_riad"
+                android:layout_width="match_parent"
+                android:background="@drawable/btn3"
+                android:layout_margin="10dp"
+
+                android:layout_height="40dp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="17dp"
+                android:text="@string/radio_riad"
+                /></RadioGroup>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end"
+    android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="53 ريال"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="40dp"
+                    android:textColor="#000"
+                    android:gravity="center"
+
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="55 ريال"
+                    android:layout_height="40dp"
+                    android:textColor="#000"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:textSize="17dp"/>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="59ريال"
+                    android:layout_height="40dp"
+                    android:textColor="#000"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="60 ريال"
+                    android:layout_height="40dp"
+                    android:textColor="#000"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+
+                    android:gravity="center"
+                    android:textSize="17dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="60 ريال"
+        android:layout_height="40dp"
+        android:textColor="#000"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:textSize="17dp"/>
+</LinearLayout>
+            </FrameLayout>
+
+        <Button
+            android:id="@+id/choose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" تم الاختيار"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="25dp"
+            android:background="@drawable/btn2"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

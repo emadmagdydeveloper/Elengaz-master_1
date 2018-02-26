@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    >
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:text="  الدفع "/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/backsearch"
+                android:layout_height="50dp"
+                android:layout_margin="7dp"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textColor="#cc4d4747"
+                    android:layout_gravity="right"
+                    android:textSize="17dp"
+                    android:layout_margin="7dp"
+                    android:gravity="center_vertical"
+                    android:text="  اسم المحول :  "/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:textColor="#cc4d4747"
+                    android:layout_gravity="right"
+                    android:textSize="17dp"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@drawable/backsearch"
+                android:layout_height="50dp"
+                android:layout_margin="7dp"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textColor="#cc4d4747"
+                    android:layout_gravity="right"
+                    android:textSize="17dp"
+                    android:layout_margin="7dp"
+                    android:gravity="center_vertical"
+                    android:text=" تاريخ التحويل :  "/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:textColor="#cc4d4747"
+                    android:layout_gravity="right"
+                    android:textSize="17dp"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="@drawable/backsearch"
+                android:layout_height="50dp"
+                android:layout_margin="7dp"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textColor="#cc4d4747"
+                    android:layout_gravity="right"
+                    android:textSize="17dp"
+                    android:layout_margin="7dp"
+                    android:gravity="center_vertical"
+                    android:text=" مبلغ التحويل :  "/>
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="40dp"
+                    android:textColor="#cc4d4747"
+                    android:layout_gravity="left"
+                    android:textSize="17dp"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/backsearch"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:textColor="#cc4d4747"
+                android:layout_margin="7dp"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:gravity="center_vertical"
+                android:text="صوره التحويل : "/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="رفع صوره التحويل"
+                    android:padding="5dp"
+                    android:layout_gravity="left"
+                    android:textSize="15dp"
+                    android:background="@color/colorPrimary"/>
+            </FrameLayout>
+
+            <Button
+                android:id="@+id/trans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" تاكيد التحويل"
+                android:layout_margin="10dp"
+                android:textSize="25dp"
+                android:background="@drawable/btn2"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

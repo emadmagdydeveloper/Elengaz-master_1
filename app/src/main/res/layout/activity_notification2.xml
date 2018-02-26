@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+    tools:context="com.SemiColon.Hmt.elengaz.Activities.Notification2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#000"
+                android:text=" يتبقى يوم واحد لانهاءالخدمه"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#cc4d4747"
+                android:text="يمكن المتابعه مع مقدم الخدمه"/>
+        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_arrow"
+            android:layout_marginRight="80dp"/>
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#6c515050"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+            android:background="@drawable/backsearch"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات مكتب العمل"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات الجوازات "/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات وزاره التجاره "/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات البلديات"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات اداره الاستقدام للافراد"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات وزارة الخارجيه"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/btn3"
+        android:textSize="18dp"
+        android:text="  خدمات اخرى "/>
+</LinearLayout>

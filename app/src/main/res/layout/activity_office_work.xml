@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff"
+   >
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_gravity="center"
+            android:layout_marginTop="19dp"
+            android:gravity="center"
+            android:text="خدمات مكتب العمل"
+            android:textColor="#000"
+            android:textSize="25dp" />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:textColor="#cc4d4747"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:paddingRight="10dp"
+            android:theme="@style/Base.Theme.AppCompat.Light.DarkActionBar"
+            android:background="@drawable/backsearch"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnsearchrate"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:textColor="#f12e2c2c"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@drawable/backsearch"
+        android:textSize="18dp"
+        android:text=" البحث بالتقييم"/>
+
+    <Button
+        android:id="@+id/btnsearchplace"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary"
+        android:textSize="18dp"
+        android:text="    البحث بالمكان"/>
+</LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycle_offices">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="#fff"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn2"
+        android:textSize="18dp"
+        android:text=" اضافة الخدمه التى تريدها"/>
+</LinearLayout>
+    </ScrollView>
+</LinearLayout>
