@@ -13,9 +13,12 @@ import android.widget.Toast;
 
 
 import com.SemiColon.Hmt.elengaz.API.Service.APIClient;
+import com.SemiColon.Hmt.elengaz.API.Service.Preferences;
 import com.SemiColon.Hmt.elengaz.API.Service.ServicesApi;
-import com.SemiColon.Hmt.elengaz.API.Model.MSG;
+import com.SemiColon.Hmt.elengaz.Model.MSG;
 import com.SemiColon.Hmt.elengaz.R;
+import com.romainpiel.shimmer.Shimmer;
+import com.romainpiel.shimmer.ShimmerTextView;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -28,12 +31,13 @@ import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
-    EditText username,password;
-    Button login;
-    TextView signup;
+    private EditText username,password;
+    private Button login;
+    private TextView signup;
     private ProgressDialog pDialog;
-
     String id;
+    private Preferences preferences;
+    private ShimmerTextView txt_shimmer;
 
 
     @Override
@@ -42,10 +46,9 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
-        username=findViewById(R.id.edt_user_name);
-        password=findViewById(R.id.edt_user_pass);
-        login=findViewById(R.id.btnlogin);
-        signup=findViewById(R.id.txtsignup);
+        preferences = new Preferences(this);
+        initView();
+
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,11 +68,25 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    private void initView() {
+        username=findViewById(R.id.edt_user_name);
+        password=findViewById(R.id.edt_user_pass);
+        login=findViewById(R.id.btnlogin);
+        signup=findViewById(R.id.txtsignup);
+        txt_shimmer = findViewById(R.id.txt_shimmer);
+
+        Shimmer shimmer = new Shimmer();
+        shimmer .setDuration(1500)
+                .setStartDelay(300);
+        shimmer.start(txt_shimmer);
+    }
+
     private void loginByServer() {
         pDialog = new ProgressDialog(Login.this);
         pDialog.setIndeterminate(true);
-        pDialog.setMessage("Loogin...");
-        pDialog.setCancelable(false);
+        pDialog.setMessage(getString(R.string.login));
+        pDialog.setCancelable(true);
+        pDialog.setCanceledOnTouchOutside(false);
 
         showpDialog();
 
@@ -81,7 +98,8 @@ public class Login extends AppCompatActivity {
 
         Call<MSG> userCall = service.userLogIn(user,pass);
 
-        userCall.enqueue(new Callback<MSG>() {
+        userCall.enqueue(new Callback<MSG>()
+        {
             @Override
             public void onResponse(Call<MSG> call, Response<MSG> response) {
                 hidepDialog();
@@ -89,11 +107,12 @@ public class Login extends AppCompatActivity {
 //                Log.d("onResponse", "" + response.body().getMessage());
                 if (response.body().getSuccess() == 1) {
                     id=response.body().getClient_id();
-                   Intent i=new Intent(Login.this, Home.class);
+                    preferences.CreateSharedPref(id);
 
-                   i.putExtra("id",id);
-                   startActivity(i);
-
+                    Intent i=new Intent(Login.this, Home.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    i.putExtra("id",id);
+                    startActivity(i);
                     finish();
                 } else {
                     Toast.makeText(Login.this, "" + response.body().getMessage(), Toast.LENGTH_SHORT).show();
@@ -159,4 +178,12 @@ public class Login extends AppCompatActivity {
         return password;
     }
 
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
+    }
 }

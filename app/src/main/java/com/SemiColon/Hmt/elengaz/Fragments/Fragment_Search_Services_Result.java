@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.SemiColon.Hmt.elengaz.API.Model.Services;
+import com.SemiColon.Hmt.elengaz.Model.Services;
 import com.SemiColon.Hmt.elengaz.Activities.OfficeWork;
 import com.SemiColon.Hmt.elengaz.Adapters.ServicesAdapter_SearchResult;
 import com.SemiColon.Hmt.elengaz.R;

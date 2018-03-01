@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.SemiColon.Hmt.elengaz.API.Service.APIClient;
 import com.SemiColon.Hmt.elengaz.API.Service.ServicesApi;
-import com.SemiColon.Hmt.elengaz.API.Model.MSG;
+import com.SemiColon.Hmt.elengaz.Model.MSG;
 import com.SemiColon.Hmt.elengaz.R;
 
 import java.math.BigInteger;

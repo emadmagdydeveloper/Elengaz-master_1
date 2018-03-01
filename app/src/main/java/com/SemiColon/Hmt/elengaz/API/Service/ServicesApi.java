@@ -2,9 +2,11 @@ package com.SemiColon.Hmt.elengaz.API.Service;
 
 
 
-import com.SemiColon.Hmt.elengaz.API.Model.Officces;
-import com.SemiColon.Hmt.elengaz.API.Model.Services;
-import com.SemiColon.Hmt.elengaz.API.Model.MSG;
+import com.SemiColon.Hmt.elengaz.Model.MSG;
+import com.SemiColon.Hmt.elengaz.Model.Officces;
+import com.SemiColon.Hmt.elengaz.Model.OfficeOfferModel;
+import com.SemiColon.Hmt.elengaz.Model.ResponseModel;
+import com.SemiColon.Hmt.elengaz.Model.Services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +18,7 @@ import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 /**
  * Created by elashry on 2/10/2018.
@@ -107,7 +110,7 @@ public interface ServicesApi {
 
 
     @FormUrlEncoded
-    @POST("SearchOffice")
+    @POST("SearchOfficeEvaluatin")
     Call<List<Officces>> searchByRate(@FieldMap Map<String,String> map);
 
 
@@ -115,5 +118,15 @@ public interface ServicesApi {
     @POST("SearchService")
     Call<List<Officces>> searchservice(@Field("offsearch_title_serviceice_id")String search_title_service);
 */
+  @GET("OfficeOffers/{client_service_id}")
+  Call<List<OfficeOfferModel>> DisplayAll_OfficesOffers(@Path("client_service_id") String client_service_id);
+
+    @FormUrlEncoded
+    @POST("OfficeOffers/{client_service_id}")
+    Call<ResponseModel> Send_OfficesOffersDone(@Path("client_service_id") String client_service_id, @Field("office_id_fk") String office_id_fk);
+
+    @FormUrlEncoded
+    @POST("AddEvaluation")
+    Call<ResponseModel> AddRate(@FieldMap Map <String ,String> map);
 
 }

@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 
-import com.SemiColon.Hmt.elengaz.API.Model.Officces;
+import com.SemiColon.Hmt.elengaz.Model.Officces;
 import com.SemiColon.Hmt.elengaz.Adapters.OfficesAdapter_SearchResult;
 import com.SemiColon.Hmt.elengaz.R;
 

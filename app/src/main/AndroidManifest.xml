@@ -74,7 +74,9 @@
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".Activities.OfficeLogin" />
         <activity android:name=".Activities.RegisterOffice" />
-        <activity android:name=".Activities.Activity_Search_Results"></activity>
+        <activity android:name=".Activities.Activity_Search_Results" />
+        <activity android:name=".Activities.Office_Detail_Activity"
+            ></activity>
     </application>
 
 </manifest>

@@ -10,10 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.SemiColon.Hmt.elengaz.API.Model.User;
+import com.SemiColon.Hmt.elengaz.API.Service.Preferences;
+import com.SemiColon.Hmt.elengaz.Model.User;
 import com.SemiColon.Hmt.elengaz.API.Service.APIClient;
 import com.SemiColon.Hmt.elengaz.API.Service.ServicesApi;
-import com.SemiColon.Hmt.elengaz.API.Model.MSG;
+import com.SemiColon.Hmt.elengaz.Model.MSG;
 import com.SemiColon.Hmt.elengaz.R;
 
 import me.anwarshahriar.calligrapher.Calligrapher;
@@ -24,21 +25,22 @@ import retrofit2.Response;
 public class Register extends AppCompatActivity {
 
     private static final String TAG = "SignupActivity";
-    EditText username,password ,phone, email;
-    Button register;
+    private EditText username,password ,phone, email;
+    private Button register;
     private ProgressDialog pDialog;
     User user;
+    private Preferences preferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "JannaLT-Regular.ttf", true);
-        username=findViewById(R.id.edtusername);
-        password=findViewById(R.id.edtpass);
-        email=findViewById(R.id.edtemail);
-        phone=findViewById(R.id.edtphone);
-        register=findViewById(R.id.register);
+        preferences = new Preferences(this);
+
+        initView();
+
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +60,15 @@ public class Register extends AppCompatActivity {
         });
 
 
+    }
+
+    private void initView()
+    {
+        username=findViewById(R.id.edtusername);
+        password=findViewById(R.id.edtpass);
+        email=findViewById(R.id.edtemail);
+        phone=findViewById(R.id.edtphone);
+        register=findViewById(R.id.register);
     }
 
 
@@ -131,7 +142,8 @@ public class Register extends AppCompatActivity {
         pDialog = new ProgressDialog(Register.this);
         pDialog.setIndeterminate(true);
         pDialog.setMessage("Creating Account...");
-        pDialog.setCancelable(false);
+        pDialog.setCancelable(true);
+        pDialog.setCanceledOnTouchOutside(false);
 
         showpDialog();
 
@@ -157,8 +169,8 @@ public class Register extends AppCompatActivity {
 
 
                 if (response.body().getSuccess() == 1) {
-                    startActivity(new Intent(Register.this, Home.class));
 
+                    startActivity(new Intent(Register.this, Home.class));
                     Toast.makeText(Register.this, "email"+user.getEmail()+"10"+user.getPassword(), Toast.LENGTH_SHORT).show();
 
                     finish();

@@ -6,8 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.SemiColon.Hmt.elengaz.API.Model.Officces;
-import com.SemiColon.Hmt.elengaz.API.Model.Services;
+import com.SemiColon.Hmt.elengaz.Model.Officces;
+import com.SemiColon.Hmt.elengaz.Model.Services;
 import com.SemiColon.Hmt.elengaz.Fragments.Fragment_Search_Offices_Result;
 import com.SemiColon.Hmt.elengaz.Fragments.Fragment_Search_Services_Result;
 import com.SemiColon.Hmt.elengaz.R;

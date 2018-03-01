@@ -12,7 +12,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.SemiColon.Hmt.elengaz.API.Model.MSG;
+import com.SemiColon.Hmt.elengaz.Model.MSG;
 import com.SemiColon.Hmt.elengaz.API.Service.APIClient;
 import com.SemiColon.Hmt.elengaz.API.Service.ServicesApi;
 import com.SemiColon.Hmt.elengaz.R;
@@ -29,8 +29,9 @@ public class AddService extends AppCompatActivity {
     Button btnDatePicker, btnplace,add;
     private int mYear, mMonth, mDay;
     EditText serviseName,detail,phone,otherPhone,email;
-    String sDate,client_id;
+    String sDate,client_id,service_id;
     Double sLatitude,sLongitude;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,7 @@ public class AddService extends AppCompatActivity {
        sLatitude= intent.getDoubleExtra("latitude",1.1);
        sLongitude= intent.getDoubleExtra("longitude",1.1);
       client_id= intent.getStringExtra("client_id");
+      service_id = intent.getStringExtra("service_id");
         btnDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,7 +92,7 @@ public class AddService extends AppCompatActivity {
 
                 pDialog = new ProgressDialog(AddService.this);
                 pDialog.setIndeterminate(true);
-                pDialog.setMessage("Creating Account...");
+                pDialog.setMessage("Wait for adding services...");
                 pDialog.setCancelable(false);
 
                 showpDialog();
@@ -118,7 +120,9 @@ public class AddService extends AppCompatActivity {
 
 
                         if (response.isSuccessful()) {
-                            startActivity(new Intent(AddService.this, Offers.class));
+                            Intent intent1 = new Intent(AddService.this, Offers.class);
+                            intent1.putExtra("service_id",service_id);
+                            startActivity(intent1);
 
                             Toast.makeText(AddService.this, ""+sLatitude.toString()+" "+sLongitude.toString()+" "+sDate+" "+client_id, Toast.LENGTH_LONG).show();
 

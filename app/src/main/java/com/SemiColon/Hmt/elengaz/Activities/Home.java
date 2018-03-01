@@ -1,18 +1,22 @@
 package com.SemiColon.Hmt.elengaz.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.SearchView;
 import android.widget.Toast;
 
-import com.SemiColon.Hmt.elengaz.API.Model.Services;
 import com.SemiColon.Hmt.elengaz.API.Service.APIClient;
+import com.SemiColon.Hmt.elengaz.API.Service.Preferences;
 import com.SemiColon.Hmt.elengaz.API.Service.ServicesApi;
 import com.SemiColon.Hmt.elengaz.Adapters.ServicesAdapter;
+import com.SemiColon.Hmt.elengaz.Model.Services;
 import com.SemiColon.Hmt.elengaz.R;
 
 import java.io.Serializable;
@@ -26,24 +30,24 @@ import retrofit2.Response;
 
 public class Home extends AppCompatActivity {
 
-    ArrayList<Services> Model;
-    ServicesAdapter adapter;
-    RecyclerView recyclerView;
-    SearchView searchView;
-   public String id;
+    private ArrayList<Services> Model;
+    private ServicesAdapter adapter;
+    private RecyclerView recyclerView;
+    private SearchView searchView;
+    private Toolbar toolbar;
+    private Preferences preferences;
+
+    public String id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        final Intent intent=getIntent();
-        id=intent.getStringExtra("id");
-        Toast.makeText(this, ""+id, Toast.LENGTH_SHORT).show();
         Calligrapher calligrapher=new Calligrapher(this);
         calligrapher.setFont(this,"JannaLT-Regular.ttf",true);
-         searchView= (SearchView) findViewById(R.id.searchView);
-
-         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        preferences = new Preferences(this);
+        initView();
+        getDataFromIntent();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
              @Override
              public boolean onQueryTextSubmit(String s) {
                  Toast.makeText(Home.this, ""+s, Toast.LENGTH_SHORT).show();
@@ -89,17 +93,51 @@ public class Home extends AppCompatActivity {
                  return false;
              }
          });
-        recyclerView = findViewById(R.id.recyc_service);
 
+    }
+
+
+
+    private void initView()
+    {
         Model=new ArrayList<>();
 
+        toolbar = findViewById(R.id.home_toolBar);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        searchView=  findViewById(R.id.searchView);
+        searchView.setQueryHint(Html.fromHtml("<font color = #000>" + "ابحث عن خدمه" + "</font>"));
+
+        recyclerView = findViewById(R.id.recyc_service);
         recyclerView.setLayoutManager(new GridLayoutManager(Home.this,1));
         recyclerView.setHasFixedSize(true);
-
         adapter=new ServicesAdapter(Home.this,Model);
         recyclerView.setAdapter(adapter);
 
-        searchView.setQueryHint(Html.fromHtml("<font color = #000>" + "ابحث عن خدمه" + "</font>"));
+
+
+    }
+    private void getDataFromIntent()
+    {
+        Intent intent=getIntent();
+        if (intent!=null)
+        {
+            if (intent.hasExtra("id"))
+            {
+                id=intent.getStringExtra("id");
+
+            }
+
+        }
+        Toast.makeText(this, ""+id, Toast.LENGTH_SHORT).show();
+
+
+    }
+    private void getServiceData()
+    {
         ServicesApi service = APIClient.getClient().create(ServicesApi.class);
 
         Call<List<Services>> call = service.getServicesData();
@@ -108,8 +146,8 @@ public class Home extends AppCompatActivity {
             public void onResponse(Call<List<Services>> call, Response<List<Services>>response) {
 
                 if (response.isSuccessful()){
-                Model.addAll(response.body());
-                adapter.notifyDataSetChanged();}else {
+                    Model.addAll(response.body());
+                    adapter.notifyDataSetChanged();}else {
                     Toast.makeText(Home.this, "error", Toast.LENGTH_SHORT).show();
 
                 }
@@ -125,5 +163,49 @@ public class Home extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.home_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (item.getItemId()==R.id.logout)
+        {
+            LogOut();
+        }
+        return true;
+    }
+
+    private void LogOut()
+    {
+
+
+        preferences.ClearSharedPref();
+        Intent intent = new Intent(this,Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        getServiceData();
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 }
